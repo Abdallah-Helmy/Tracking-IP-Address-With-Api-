@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    height: 100vh;
+}
+
+.container {
+    min-width: 70%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    background-image: url("images/pattern-bg.png");
+}
+
+.container .tracker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    border-radius: 10px 10px 0 0;
+}
+.container .tracker .inputs {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .tracker .inputs #input {
+    border: none;
+    border-radius: 8px 0 0 8px;
+    height: 34px;
+    padding: 10px;
+    font-size: 18px;
+    outline: none;
+}
+
+.container .tracker .inputs #input::placeholder {
+    opacity: .8;
+    transition: opacity .3s ease;
+}
+
+.container .tracker .inputs #input:focus::placeholder {
+    opacity: 0;
+}
+
+.container .tracker .inputs #btn {
+    position: relative;
+    width: 50px;
+    height: 34px;
+    border: none;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.container .tracker .inputs #btn:hover {
+    background-color: hsl(0, 0%, 17%);
+}
+
+.container .tracker .inputs #btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-width: 9px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.container .results {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 28px 0;
+    height: 100px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    margin: 50px 2px 0 2px;
+}
+
+.container .results div span {
+    text-transform: uppercase;
+    color: #266686;
+}
+
+.container .results div {
+    position: relative;
+    text-align: center;
+    width: calc(100% / 4);
+}
+
+.container .results div::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #ddd;
+    top: 0;
+    right: 0;
+}
+
+
+@media (max-width: 290px) {
+    .container .results {
+        flex-direction: column;
+        height: 100%;
+        padding: 0;
+    }
+
+    .container .results div {
+        margin-bottom: 22px;
+        width: 100%;
+        height: calc(100%/4);
+    }
+
+    .container .results div::after {
+        bottom: 0;
+        width: 99%;
+        height: 1px;
+        left: 0;
+    }
+
+    .container .tracker .inputs #input {
+        padding: 0;
+    }
+}
+
+@media (min-width: 290px) and (max-width: 840px) {
+    .container .results {
+        flex-direction: column;
+        height: 100%;
+        padding: 0;
+    }
+
+    .container .results div {
+        margin-bottom: 22px;
+        width: 100%;
+        height: calc(100%/4);
+    }
+
+    .container .results div::after {
+        bottom: 0;
+        width: 99%;
+        height: 1px;
+        left: 0;
+    }
+}
